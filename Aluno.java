@@ -6,6 +6,8 @@ public class Aluno {
     private String nome;
     private String poder;
     private String categoria;
+    private Aluno esquerdaAluno = null;
+    private Aluno direitaAluno = null;
 
     //Construtor
     public Aluno(String nome, String categoria, String poder, int nivelpoder){
@@ -14,6 +16,8 @@ public class Aluno {
         this.nome = nome;
         this.poder = poder;
         this.categoria = categoria;
+        this.esquerdaAluno = esquerdaAluno;
+        this.direitaAluno = direitaAluno;
     }
 
     //Gets
@@ -32,7 +36,15 @@ public class Aluno {
     public int getID(){
         return ID;
     }
-    public void getInfo(){
+    public Aluno getEsquerda(){
+        return esquerdaAluno;
+    }
+    public Aluno getDireita(){
+        return direitaAluno;
+    }
+
+    //Mostrar informações
+    public void showInfo(){
         System.out.println("ID: " + ID);
         System.out.println("Nome: " + nome);
         System.out.println("Categoria: " + categoria);
@@ -52,5 +64,11 @@ public class Aluno {
     }
     public void setCategoria(String categoria){
         this.categoria = categoria;
+    }
+    public void setEsquerda(Aluno esquerdaAluno){
+        this.esquerdaAluno = esquerdaAluno;
+    }
+    public void setDireita(Aluno direitaAluno){
+        this.direitaAluno = direitaAluno;
     }
 }
